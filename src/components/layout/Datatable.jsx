@@ -42,7 +42,7 @@ function Datatable() {
     return (  
         <div className="p-5 px-5">
             <h1 className="chart-heading p-5 text-4xl text-red-500">Data Table</h1>
-            <div className="text-end"><input className="p-2" type="text" onChange={handleFilter} placeholder='Search...'/></div>
+            <div className="text-end"><input className="p-2 border border-blue-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300" type="text" onChange={handleFilter} placeholder='Search...'/></div>
             <DataTable columns={columns} data={records} selectableRows fixedHeader pagination>
                 
             </DataTable>

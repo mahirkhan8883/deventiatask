@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material';
 import React from 'react';
 import {
   Tooltip,
@@ -36,9 +37,11 @@ const pdata2 = [
 function Charts() {
   return (
     <div className="p-5">
+        <Grid container>
+        <Grid item md={6}>
         <div className="w-full px-5">
             <h1 className="chart-heading p-5 text-4xl text-red-500">Line Chart</h1>
-            <ResponsiveContainer width="100%" height={500}>
+            <ResponsiveContainer width="100%">
             <LineChart data={pdata}>
                 <CartesianGrid />
                 <XAxis dataKey="name" interval={'preserveStartEnd'} />
@@ -50,7 +53,10 @@ function Charts() {
             </LineChart>
             </ResponsiveContainer>
         </div>
-        <div className="w-full mt-10 px-5">
+        </Grid>
+        
+        <Grid item md={6}>
+        <div className="w-full px-5">
             <h1 className="chart-heading p-5 text-4xl text-red-500">Bar Chart</h1>
             <ResponsiveContainer width="100%" height={500}>
             <BarChart data={pdata}>
@@ -64,6 +70,11 @@ function Charts() {
             </BarChart>
             </ResponsiveContainer>
         </div>
+        </Grid>
+        </Grid>
+
+        <Grid container>
+        <Grid item md={6}>
         <div className="w-full mt-10 px-5">
             <h1 className="chart-heading p-5 text-4xl text-red-500">Bar Chart</h1>
             <ResponsiveContainer width="100%" height={500}>
@@ -74,6 +85,9 @@ function Charts() {
             </PieChart>
             </ResponsiveContainer>
         </div>
+        </Grid>
+        </Grid>
+        
     </div>
   );
 }
