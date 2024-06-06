@@ -73,7 +73,7 @@ function Charts() {
         </Grid>
         
         <Grid item md={6} xs={12}>
-          <div className="w-full mt-10 px-5">
+          <div className="w-full px-5">
             <h1 className="chart-heading p-5 text-4xl text-red-500">Pie Chart</h1>
             <ResponsiveContainer width="100%" height={500}>
               <PieChart width={730} height={250}>
