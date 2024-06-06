@@ -25,24 +25,24 @@ const pdata = [
 ];
 
 const pdata2 = [
-    { name: 'Python', value: 5, },
-    { name: 'Java', value: 26,},
-    { name: 'Php', value: 20,},
-    { name: 'React', value: 25,},
-    { name: 'Next', value: 5, },
-    { name: 'MERN', value: 26,}
-  ];
-
+  { name: 'Python', value: 5 },
+  { name: 'Java', value: 26 },
+  { name: 'Php', value: 20 },
+  { name: 'React', value: 25 },
+  { name: 'Next', value: 5 },
+  { name: 'MERN', value: 26 }
+];
 
 function Charts() {
   return (
     <div className="p-5">
-        <Grid container>
-        <Grid item md={6}>
-        <div className="w-full px-5">
+      <Grid container spacing={3}>
+        
+        <Grid item md={12}>
+          <div className="w-full px-5">
             <h1 className="chart-heading p-5 text-4xl text-red-500">Line Chart</h1>
-            <ResponsiveContainer width="100%">
-            <LineChart data={pdata}>
+            <ResponsiveContainer width="100%" height={400}>
+              <LineChart data={pdata}>
                 <CartesianGrid />
                 <XAxis dataKey="name" interval={'preserveStartEnd'} />
                 <YAxis />
@@ -50,16 +50,16 @@ function Charts() {
                 <Legend />
                 <Line type="monotone" dataKey="students" stroke="blue" activeDot={{ r: 8 }} />
                 <Line type="monotone" dataKey="fees" stroke="green" activeDot={{ r: 8 }} />
-            </LineChart>
+              </LineChart>
             </ResponsiveContainer>
-        </div>
+          </div>
         </Grid>
         
-        <Grid item md={6}>
-        <div className="w-full px-5">
+        <Grid item md={6} xs={12}>
+          <div className="w-full px-5">
             <h1 className="chart-heading p-5 text-4xl text-red-500">Bar Chart</h1>
             <ResponsiveContainer width="100%" height={500}>
-            <BarChart data={pdata}>
+              <BarChart data={pdata}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
@@ -67,27 +67,25 @@ function Charts() {
                 <Legend />
                 <Bar dataKey="students" fill="#8884d8" />
                 <Bar dataKey="fees" fill="#82ca9d" />
-            </BarChart>
+              </BarChart>
             </ResponsiveContainer>
-        </div>
+          </div>
         </Grid>
-        </Grid>
-
-        <Grid container>
-        <Grid item md={6}>
-        <div className="w-full mt-10 px-5">
-            <h1 className="chart-heading p-5 text-4xl text-red-500">Bar Chart</h1>
+        
+        <Grid item md={6} xs={12}>
+          <div className="w-full mt-10 px-5">
+            <h1 className="chart-heading p-5 text-4xl text-red-500">Pie Chart</h1>
             <ResponsiveContainer width="100%" height={500}>
-            <PieChart width={730} height={250}>
+              <PieChart width={730} height={250}>
                 <Tooltip />
                 <Pie data={pdata} dataKey="students" nameKey="fees" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
                 <Pie data={pdata2} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
-            </PieChart>
+              </PieChart>
             </ResponsiveContainer>
-        </div>
-        </Grid>
+          </div>
         </Grid>
         
+      </Grid>
     </div>
   );
 }
